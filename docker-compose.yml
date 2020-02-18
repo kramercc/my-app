@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+
+  web:
+    image: my-app:1.1
+
+    container_name: my-app
+
+    ports:
+       - '9080:9080'  # expose 9080 on host and sent to 9080 in container
+

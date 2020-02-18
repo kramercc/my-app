@@ -1,0 +1,19 @@
+FROM maven:3.3-jdk-8 AS MVN_BUILD
+
+WORKDIR app
+
+RUN mvn clean compile test package
+
+
+#FROM openliberty/open-liberty AS target
+
+#COPY --from=MVN_BUILD --chown=1001:0 app/target/ServletSample.war /config/dropins/
+
+#COPY --chown=1001:0 server.xml  /config/
+
+#ARG VERBOSE=true
+
+#RUN configure.sh
+
+
+
